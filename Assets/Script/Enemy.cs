@@ -21,13 +21,5 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
-
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("We hit");
-            Destroy(this.gameObject);
-        }
-    }
+   
 }
