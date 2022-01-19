@@ -5,11 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] int speed;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+       /* oder
+         gameManager = FindObjectOfType<GameManager>();
+       */
     }
 
     // Update is called once per frame
@@ -17,6 +21,7 @@ public class Player : MonoBehaviour
     {
         Move();
         
+
     }
     void Move()
     {
@@ -34,7 +39,7 @@ public class Player : MonoBehaviour
 
         if(other.gameObject.CompareTag("ScoreZone"))
         {
-            Debug.Log("Score +1");
+            gameManager.SetScore();
         }
     }
 }
