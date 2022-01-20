@@ -34,12 +34,18 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            gameManager.DecreaseHp();
             Destroy(other.gameObject);
         }
 
         if(other.gameObject.CompareTag("ScoreZone"))
         {
             gameManager.SetScore();
+        }
+        if (other.gameObject.CompareTag("Life"))
+        {
+            gameManager.IncreaseHp();
+            Destroy(other.gameObject);
         }
     }
 }
