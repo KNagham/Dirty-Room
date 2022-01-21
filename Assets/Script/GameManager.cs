@@ -14,26 +14,31 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        scoreText.SetText("Score: " + score);
-        hpText.SetText("Hp: " + hp);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateUI();
+    }
+    void UpdateUI()
+    {
+        scoreText.SetText("Score: " + score);
+        hpText.SetText("Hp: " + hp);
+        
 
     }
 
     public void SetScore()
     {
         score += 10;
-        scoreText.SetText("Score: " + score);
+       
     }
 
     public void DecreaseHp()
     {
         hp -= 1;
-        hpText.SetText("Hp: " + hp);
         if (hp <= 0) 
         {
             Destroy(player.gameObject);
@@ -46,7 +51,10 @@ public class GameManager : MonoBehaviour
         if (hp < 5)
         {
             hp += 1;
-            hpText.SetText("Hp: " + hp);
+        }
+        else
+        {
+            score += 1000;
         }
     }
 }

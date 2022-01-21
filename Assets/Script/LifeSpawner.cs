@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject life;
+    [SerializeField] List <GameObject> life;
     [SerializeField] float time;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class LifeSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(time);
-            Instantiate(life, new Vector3(Random.Range(-2.9f, 2.9f), 10, 0), Quaternion.identity);
+            Instantiate(life[Random.Range(0,3)], new Vector3(Random.Range(-2.9f, 2.9f), 10, 0), Quaternion.identity);
         }
     }
 }
