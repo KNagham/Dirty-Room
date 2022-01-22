@@ -53,4 +53,8 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
