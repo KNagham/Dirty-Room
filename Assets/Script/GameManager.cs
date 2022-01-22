@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI hpText;
+    [SerializeField] GameObject gameOverMenu;
+    bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
+        isAlive = true;
         player = GameObject.Find("Player").GetComponent<Player>();
+        Time.timeScale = 1f;
         
     }
 
@@ -21,7 +26,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateUI();
+        checkPlayerLife();
     }
+
+    private void checkPlayerLife()
+    {
+        if (!isAlive)
+        {
+            Time.timeScale = 0;
+        }
+    }
+
     void UpdateUI()
     {
         scoreText.SetText("Score: " + score);
@@ -41,7 +56,9 @@ public class GameManager : MonoBehaviour
         hp -= 1;
         if (hp <= 0) 
         {
+            isAlive = false;
             Destroy(player.gameObject);
+            gameOverMenu.SetActive(true);
         }
 
     }
