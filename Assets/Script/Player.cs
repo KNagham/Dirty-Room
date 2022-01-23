@@ -6,11 +6,13 @@ public class Player : MonoBehaviour
 {
     [SerializeField] int speed;
     private GameManager gameManager;
+    private AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
        /* oder
          gameManager = FindObjectOfType<GameManager>();
        */
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            audioManager.PlayEnemy();
             gameManager.DecreaseHp();
             Destroy(other.gameObject);
         }
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Life"))
         {
+            audioManager.PlayYummi();
             gameManager.IncreaseHp();
             Destroy(other.gameObject);
         }
