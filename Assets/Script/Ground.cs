@@ -14,10 +14,10 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -speed * Time.deltaTime, 0);
-        if(transform.position.y <=-1)
+        transform.Translate(0, 0, -speed * Time.deltaTime);
+        if(transform.position.z <=-10)
         {
-            transform.position= new Vector3 (0,8,0);
+            transform.position= new Vector3 (0,0,10);
         }
     }
 }

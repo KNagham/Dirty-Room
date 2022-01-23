@@ -22,7 +22,7 @@ public class LifeSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(time);
-            Instantiate(life[Random.Range(0,3)], new Vector3(Random.Range(-2.9f, 2.9f), 10, 0), Quaternion.identity);
+            Instantiate(life[Random.Range(0,3)], new Vector3(Random.Range(-2.9f, 2.9f), 1, 20), Quaternion.identity);
         }
     }
 }

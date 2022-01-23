@@ -15,8 +15,8 @@ public class Life : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -speed * Time.deltaTime, 0);
-        if (transform.position.y <= -10)
+        transform.Translate(0, 0, -speed * Time.deltaTime);
+        if (transform.position.z <= -10)
         {
             Destroy(this.gameObject);
         }
