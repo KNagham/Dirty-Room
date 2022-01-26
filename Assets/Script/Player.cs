@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
     void Move()
     {
         float hor = Input.GetAxis("Horizontal");
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.8f, 2.8f), 0, 0);
-        transform.position += new Vector3(hor * Time.deltaTime * speed, 0, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.8f, 2.8f), 0, -1.5f);
+        transform.position += new Vector3(hor * Time.deltaTime * speed, 0, -1.5f);
     }
 
     private void OnTriggerEnter(Collider other)
