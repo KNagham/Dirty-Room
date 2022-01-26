@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Home.unity
     guid: 185387e051c8a504b98e12209c27d2f9
   - enabled: 1
-    path: Assets/Scenes/Game Play.unity
+    path: Assets/Scenes/EasyMode.unity
     guid: 1df6395e129ac824bb9c269ad0f95561
+  - enabled: 1
+    path: Assets/Scenes/SandBox.unity
+    guid: 90327d7b4c78bc548a909dade83b7aa0
   m_configObjects: {}

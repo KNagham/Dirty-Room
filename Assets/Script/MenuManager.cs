@@ -53,8 +53,16 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void Play()
+    public void PlayEasy()
     {
         SceneManager.LoadScene(1);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void PlaySandBox()
+    {
+        SceneManager.LoadScene(2);
     }
 }

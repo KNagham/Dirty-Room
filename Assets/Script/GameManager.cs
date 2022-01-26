@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI hpText;
     [SerializeField] GameObject gameOverMenu;
+    [SerializeField] GameObject gameWinMenu;
+    [SerializeField] bool isEasy;
     bool isAlive;
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,13 @@ public class GameManager : MonoBehaviour
     public void SetScore()
     {
         score += 10;
+        
+        if (score >= 5000 && isEasy)
+        {
+            gameWinMenu.SetActive(true);
+            isAlive = false;
+            Time.timeScale = 0f;
+        }
        
     }
 
@@ -74,4 +83,5 @@ public class GameManager : MonoBehaviour
             score += 1000;
         }
     }
+   
 }
